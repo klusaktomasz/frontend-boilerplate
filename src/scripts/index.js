@@ -1,2 +1,1 @@
-console.log( 'Hello there!' );
-console.log( '__' );
+require( '../styles/main.scss' );
