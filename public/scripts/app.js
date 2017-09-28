@@ -8955,23 +8955,7 @@ module.exports = function (regExp, replace) {
 "use strict";
 
 
-var _a = __webpack_require__(328);
-
-console.log(_a.a);
-
-/***/ }),
-/* 328 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var a = exports.a = function a(_a) {
-  console.log("" + _a);
-};
+console.log('Hello there!');
 
 /***/ })
 ],[124]);

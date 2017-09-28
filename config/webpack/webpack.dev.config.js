@@ -1,16 +1,16 @@
 const webpack = require( 'webpack' );
 const path = require( 'path' );
-const basePath = '../../';
+const basePath = '../..';
 
 const config = {
   entry: {
     app: [
       'babel-polyfill',
-      path.resolve( __dirname, `${basePath}src/scripts/index.js` )
+      path.resolve( __dirname, `${basePath}/src/scripts/index.js` )
     ]
   },
   output: {
-    path: path.resolve( __dirname, `${basePath}public/scripts` ),
+    path: path.resolve( __dirname, `${basePath}/public/scripts` ),
     filename: 'app.js'
   },
 
@@ -19,7 +19,7 @@ const config = {
       {
         test: /\.js$/,
         use: [ 'babel-loader' ],
-        include: path.join( __dirname, `${basePath}src/scripts` )
+        include: path.join( __dirname, `${basePath}/src/scripts` )
       }
     ]
   },
@@ -36,8 +36,12 @@ const config = {
     } )
   ],
 
-  devtool: 'source-map',
-  watch: true
+  devServer: {
+    contentBase: path.join( __dirname, `${basePath}/public` ),
+    compress: true,
+    port: 8000
+  },
+  devtool: 'source-map'
 };
 
 module.exports = config;
